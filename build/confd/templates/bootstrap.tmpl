@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+#SETTINGS_FILE="bashrc bash_rc inputrc gitconfig screenrc vimrc vim tmux.conf profile"
+SETTINGS_FILE="bashrc vimrc gitconfig ackrc"
+AFTER_POSTFIX=".after.sh"
+
+for config in ${SETTINGS_FILE}; do
+    ln -sf ${PWD}/{{ getv "/build/dest/prefix" }}/${config} ${HOME}/.${config}
+    if [[ -f "${PWD}/{{ getv "/build/dest/prefix" }}/${config}${AFTER_POSTFIX}" ]]; then
+      eval "./{{ getv "/build/dest/prefix" }}/${config}${AFTER_POSTFIX}"
+    fi
+done
+
+ln -sf ${PWD}/bin ${HOME}/bin

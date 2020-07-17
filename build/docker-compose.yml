@@ -1,0 +1,10 @@
+version: "3"
+services:
+  build_workspace:
+    image: build_workspace:${IAMGE_VER:-latest}
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    command: bash
+    volumes:
+      - .:/workspace

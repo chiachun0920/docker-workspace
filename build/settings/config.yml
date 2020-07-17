@@ -1,0 +1,13 @@
+build:
+  dest:
+    prefix: build/dist
+  os:
+    username: {{name}}
+  python:
+    main_version: 3
+    full_version: 3.7
+git:
+  profile:
+    user:
+      email: {{email}}
+      name: {{name}}

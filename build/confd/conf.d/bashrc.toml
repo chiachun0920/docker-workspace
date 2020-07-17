@@ -1,0 +1,6 @@
+[template]
+src = "bashrc.tmpl"
+dest = "dist/bashrc"
+keys = [
+    "/"
+]

@@ -1,0 +1,6 @@
+curl -sSL --progress-bar https://github.com/protocolbuffers/protobuf/releases/download/v3.9.1/protoc-3.9.1-linux-x86_64.zip -o protoc-3.9.1.zip \
+  && yes | unzip protoc-3.9.1.zip \
+  && rm -f protoc-3.9.1.zip readme.txt
+
+mv  bin/* /usr/bin/
+mv  include /usr/bin/

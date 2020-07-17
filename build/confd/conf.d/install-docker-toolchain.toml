@@ -1,0 +1,6 @@
+[template]
+src = "install-docker-toolchain.tmpl"
+dest = "dist/install-docker-toolchain.sh"
+keys = [
+    "/"
+]

@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+# add-apt-repository --yes ppa:deadsnakes/ppa
+
+apt-get install python$PYTHON_FULL_VERSION \
+    python$PYTHON_MAIN_VERSION-pip \
+    python$PYTHON_FULL_VERSION-venv -y
+
+# install common python packages
+# python3.8 -m pip install grpcio grpcio-tools django

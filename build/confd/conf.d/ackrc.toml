@@ -1,0 +1,6 @@
+[template]
+src = "ackrc.tmpl"
+dest = "dist/ackrc"
+keys = [
+    "/"
+]

@@ -1,0 +1,6 @@
+[template]
+src = "bootstrap.tmpl"
+dest = "dist/bootstrap.sh"
+keys = [
+    "/"
+]

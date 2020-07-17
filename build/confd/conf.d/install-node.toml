@@ -1,0 +1,6 @@
+[template]
+src = "install-node.tmpl"
+dest = "dist/install-node.sh"
+keys = [
+    "/"
+]

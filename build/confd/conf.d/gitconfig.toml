@@ -1,0 +1,6 @@
+[template]
+src = "gitconfig.tmpl"
+dest = "dist/gitconfig"
+keys = [
+    "/"
+]

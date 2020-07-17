@@ -1,0 +1,6 @@
+[template]
+src = "install-python.tmpl"
+dest = "dist/install-python.sh"
+keys = [
+    "/"
+]

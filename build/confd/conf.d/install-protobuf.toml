@@ -1,0 +1,6 @@
+[template]
+src = "install-protobuf.tmpl"
+dest = "dist/install-protobuf.sh"
+keys = [
+    "/"
+]

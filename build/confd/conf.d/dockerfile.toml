@@ -1,0 +1,6 @@
+[template]
+src = "dockerfile.tmpl"
+dest = "dist/Dockerfile"
+keys = [
+    "/"
+]

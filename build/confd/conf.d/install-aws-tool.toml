@@ -1,0 +1,6 @@
+[template]
+src = "install-aws-tool.tmpl"
+dest = "dist/install-aws-tool.sh"
+keys = [
+    "/"
+]

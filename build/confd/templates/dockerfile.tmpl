@@ -1,0 +1,42 @@
+FROM ubuntu:bionic
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+    sudo  \
+    curl  \
+    git   \
+    htop  \
+    vim   \
+    tree  \
+    unzip \
+    wget
+
+RUN useradd -s /bin/bash -d /home/{{ getv "/build/os/username" }} -G sudo -m {{ getv "/build/os/username" }}
+RUN echo "{{ getv "/build/os/username" }}:1qaz@WSX" | chpasswd
+
+COPY . /home/{{ getv "/build/os/username" }}/.workspaceenv
+
+ENV HOME /home/{{ getv "/build/os/username" }}
+ENV USER {{ getv "/build/os/username" }}
+
+ENV PYTHON_MAIN_VERSION {{ getv "/build/python/main_version" }}
+ENV PYTHON_FULL_VERSION {{ getv "/build/python/full_version" }}
+
+WORKDIR /home/{{ getv "/build/os/username" }}/.workspaceenv
+
+RUN ./{{ getv "/build/dest/prefix" }}/bootstrap.sh
+
+RUN ./{{ getv "/build/dest/prefix" }}/install-docker-toolchain.sh
+RUN ./{{ getv "/build/dest/prefix" }}/install-python.sh
+RUN ./{{ getv "/build/dest/prefix" }}/install-node.sh
+RUN ./{{ getv "/build/dest/prefix" }}/install-aws-tool.sh
+RUN ./{{ getv "/build/dest/prefix" }}/install-protobuf.sh
+
+WORKDIR /home/{{ getv "/build/os/username" }}
+
+RUN chown -R {{ getv "/build/os/username" }}:{{ getv "/build/os/username" }} ./
+
+LABEL maintainer="Chris Chang <chiachun0920@gmail.com>"
+
+CMD ["/bin/bash"]

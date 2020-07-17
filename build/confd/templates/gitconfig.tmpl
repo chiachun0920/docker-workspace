@@ -1,0 +1,10 @@
+[user]
+    email = {{ getv "/git/profile/user/email" }}
+	name = {{ getv "/git/profile/user/name" }}
+[alias]
+	lg = log --oneline --all --graph --decorate
+	d = difftool
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false

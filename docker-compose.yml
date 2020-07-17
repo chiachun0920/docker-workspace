@@ -1,0 +1,18 @@
+version: "3"
+services:
+  workspace:
+    image: chiachun0920/docker-workspace:${IMAGE_VER:-latest}
+    build:
+      context: .
+      dockerfile: build/dist/Dockerfile
+    environment:
+      AWS_REGION: ${AWS_REGION:-ap-northeast-1}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+    stdin_open: true
+    tty: true
+    command: bash
+    user: chris
+    volumes:
+      - ${PWD}/workspace:/home/chris/workspace:delegated
+      - /var/run/docker.sock:/var/run/docker.sock

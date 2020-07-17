@@ -1,0 +1,6 @@
+[template]
+src = "vimrcafter.tmpl"
+dest = "dist/vimrc.after.sh"
+keys = [
+    "/"
+]
