@@ -1,0 +1,6 @@
+[template]
+src = "install-others.tmpl"
+dest = "dist/install-others.sh"
+keys = [
+    "/"
+]

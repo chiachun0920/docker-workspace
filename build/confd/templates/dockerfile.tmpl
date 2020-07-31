@@ -32,6 +32,7 @@ RUN ./{{ getv "/build/dest/prefix" }}/install-python.sh
 RUN ./{{ getv "/build/dest/prefix" }}/install-node.sh
 RUN ./{{ getv "/build/dest/prefix" }}/install-aws-tool.sh
 RUN ./{{ getv "/build/dest/prefix" }}/install-protobuf.sh
+RUN ./{{ getv "/build/dest/prefix" }}/install-others.sh
 
 WORKDIR /home/{{ getv "/build/os/username" }}
 
